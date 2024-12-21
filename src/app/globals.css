@@ -36,3 +36,21 @@ body {
   background: var(--background);
   font-family: "Neue Montreal", sans-serif;
 }
+
+/* intro gsap */
+/* .intro {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.intro img {
+  position: absolute;
+}
+
+.intro__images img {
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  transform-origin: center center;
+} */

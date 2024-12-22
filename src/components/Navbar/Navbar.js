@@ -67,6 +67,7 @@ const Navbar = () => {
                 >
                   <span className="text-lg flex items-center -ml-1">
                     <MdArrowOutward className="group-hover:hidden transition-opacity" />
+                    {/* <MdArrowOutward className="group-hover:opacity-0 transition-opacity duration-200 ease-in-out" /> */}
                     <MdArrowForward className="hidden group-hover:inline-block transition-opacity" />
                   </span>
                   <a

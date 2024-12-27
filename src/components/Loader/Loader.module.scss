@@ -11,6 +11,7 @@
   background-color: white;
   overflow: hidden;
   z-index: 2;
+  
 
   &__wrapper {
     position: relative;
@@ -48,6 +49,8 @@
   &__word {
     display: block;
     font-size: 3.2rem;
+    // line-height: 1.0;
+    line-height: normal;
   }
 
   &__progressWrapper {

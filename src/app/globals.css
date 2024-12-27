@@ -18,6 +18,21 @@
        font-style: normal;
 }
 
+html {
+  font-size: calc(100vw / 1728 * 10);
+}
+
+@media (max-width: 768px) { /* sm screens */
+  html {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* Tablets */
+  html {
+    font-size: calc(100vw / 1024 * 10);
+  }
+}
 
 :root {
   --background: #ffffff;
@@ -36,21 +51,3 @@ body {
   background: var(--background);
   font-family: "Neue Montreal", sans-serif;
 }
-
-/* intro gsap */
-/* .intro {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.intro img {
-  position: absolute;
-}
-
-.intro__images img {
-  top: 50%;
-  left: 50%;
-  transform:translate(-50%, -50%);
-  transform-origin: center center;
-} */

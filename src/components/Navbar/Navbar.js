@@ -12,10 +12,18 @@ const Navbar = () => {
   const refMobile = useRef(null);
   const menuIconRef = useRef(null);
 
+  const [language, setLanguage] = useState("EN"); // Estado para controlar el idioma seleccionado
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang); // Actualiza el idioma seleccionado
+  };
+
   const links = [
     { name: "prices", href: "/prices" },
+    { name: "works", href: "/works" },
     { name: "appointments", href: "/appointments" },
     { name: "about", href: "/about" },
+    { name: "contact", href: "/contact" },
   ];
 
   const openMenu = () => {
@@ -52,8 +60,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="uppercase fixed z-10 w-full px-4 py-4 font-bold">
-      <div className="flex items-start justify-between leading-4 text-xs">
+    <nav className="uppercase fixed z-10 w-full px-4 py-4 blur-[0.4px] font-bold">
+      <div className="flex items-start justify-between leading-5 md:leading-7 text-xl md:text-3xl">
         <div className="flex-col">
           <h1>vilarnau</h1>
           <div className="block lg:hidden">date</div>
@@ -63,9 +71,9 @@ const Navbar = () => {
               {links.map((link) => (
                 <li
                   key={link.name}
-                  className="flex items-center relative group"
+                  className="flex items-center relative group hover:text-gray-400 hover:blur-[1px] transition-all duration-300 ease-in-out"
                 >
-                  <span className="text-lg flex items-center -ml-1">
+                  <span className="text-3xl flex items-center -ml-1">
                     <MdArrowOutward className="group-hover:hidden transition-opacity" />
                     {/* <MdArrowOutward className="group-hover:opacity-0 transition-opacity duration-200 ease-in-out" /> */}
                     <MdArrowForward className="hidden group-hover:inline-block transition-opacity" />
@@ -83,10 +91,25 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col hidden lg:block">
           <div className="flex">date</div>
-          <div className="flex">
-            <div>en</div>
-            <div>—</div>
-            <div>de</div>
+          <div className="flex flex-row">
+            <div
+              onClick={() => handleLanguageChange("EN")}
+              className={`flex cursor-pointer transition-colors duration-300 ease-in-out ${
+                language === "EN" ? "text-gray-400 font-bold blur-[0.7px]" : "text-black"
+              }`}
+            >
+              {language === "EN" ? "[EN]" : "EN"}
+            </div>
+
+            {/* Opción DE */}
+            <div
+              onClick={() => handleLanguageChange("DE")}
+              className={`flex cursor-pointer transition-colors duration-300 ease-in-out ${
+                language === "DE" ? "text-gray-400 font-bold blur-[0.7px]" : "text-black"
+              }`}
+            >
+              {language === "DE" ? "[DE]" : "DE"}
+            </div>
           </div>
         </div>
         {!menuOpen && (

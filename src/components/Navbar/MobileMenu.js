@@ -10,11 +10,12 @@ const MobileMenu = forwardRef(({ closeMenu, isVisible }, ref) => {
         isVisible ? "block" : "hidden"
       }`}
     >
-      <ul className="flex flex-col gap-1 text-lg w-full h-full items-center justify-center">
+      <ul className="flex flex-col gap-1 text-3xl w-full h-full items-center justify-center">
+        <li>en—de</li>
         <li>prices</li>
         <li>appointments</li>
         <li>about</li>
-        <li>en—de</li>
+        <li>contact</li>
       </ul>
       <IoIosClose
         className="absolute text-2xl top-2 right-2 cursor-pointer"

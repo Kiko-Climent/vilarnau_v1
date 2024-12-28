@@ -1,6 +1,5 @@
 "use client";
 
-import { LuPlus } from "react-icons/lu";
 import MobileMenu from "./MobileMenu";
 import { MdArrowOutward, MdArrowForward } from "react-icons/md";
 
@@ -12,10 +11,10 @@ const Navbar = () => {
   const refMobile = useRef(null);
   const menuIconRef = useRef(null);
 
-  const [language, setLanguage] = useState("EN"); // Estado para controlar el idioma seleccionado
+  const [language, setLanguage] = useState("EN");
 
   const handleLanguageChange = (lang) => {
-    setLanguage(lang); // Actualiza el idioma seleccionado
+    setLanguage(lang);
   };
 
   const links = [
@@ -100,8 +99,6 @@ const Navbar = () => {
             >
               {language === "EN" ? "[EN]" : "EN"}
             </div>
-
-            {/* Opción DE */}
             <div
               onClick={() => handleLanguageChange("DE")}
               className={`flex cursor-pointer transition-colors duration-300 ease-in-out ${
@@ -113,11 +110,13 @@ const Navbar = () => {
           </div>
         </div>
         {!menuOpen && (
-          <LuPlus
+          <div
             ref={menuIconRef}
-            className="flex block lg:hidden text-lg -mt-1 -mr-1 cursor-pointer font-bold"
+            className="flex block lg:hidden text-xl -mt-2 -mr-1 cursor-pointer font-bold"
             onClick={openMenu}
-          />
+          >
+            MENU
+          </div>
         )}
       </div>
 

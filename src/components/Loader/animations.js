@@ -27,3 +27,17 @@ export const progressAnimation = ({progressRef}) => {
 
   return tl;
 };
+
+export const collapseWords = (loaderRef) => {
+
+  const tl = gsap.timeline();
+
+  tl.to(loaderRef.current, {
+    'clip-path': 'polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)',
+    duration: 3,
+    ease: 'expo.inOut'
+
+  })
+
+  return tl;
+}

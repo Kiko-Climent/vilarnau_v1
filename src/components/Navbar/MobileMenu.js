@@ -26,7 +26,7 @@ const MobileMenu = forwardRef(({ closeMenu, isVisible }, ref) => {
         // className="absolute text-xl top-3 right-3 cursor-pointer"
         onClick={closeMenu}
       >
-        ESC
+        EXIT
       </div>
     </div>
   );

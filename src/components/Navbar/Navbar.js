@@ -58,6 +58,45 @@ const Navbar = () => {
     });
   };
 
+  // const openMenu = () => {
+  //   gsap.fromTo(
+  //     refMobile.current,
+  //     { y: "-100%", opacity: 0, filter: "blur(20px)" },
+  //     { 
+  //       y: 0,
+  //       opacity: 1,
+  //       filter: "blur(0px)",
+  //       duration: 1,
+  //       ease: "power3.out",
+  //     }
+  //   );
+  //   gsap.to(menuIconRef.current, {
+  //     y: -20,
+  //     opacity: 0,
+  //     duration: 0.3,
+  //     ease: "power2.out",
+  //     onComplete: () => setMenuOpen(true),
+  //   });
+  // };
+  
+  // const closeMenu = () => {
+  //   gsap.to(refMobile.current, {
+  //     y: "-100%",
+  //     opacity: 0,
+  //     filter: "blur(20px)",
+  //     duration: 1,
+  //     ease: "power3.in",
+  //     onComplete: () => setMenuOpen(false),
+  //   });
+  //   gsap.fromTo(
+  //     menuIconRef.current,
+  //     { y: -50, opacity: 0.5 },
+  //     { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
+  //   );
+  // };
+  
+  
+
   return (
     <nav className="uppercase fixed z-10 w-full px-4 py-4 blur-[0.4px] font-bold">
       <div className="flex items-start justify-between leading-5 md:leading-7 text-xl md:text-3xl">

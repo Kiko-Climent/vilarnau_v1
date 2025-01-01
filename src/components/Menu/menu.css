@@ -64,7 +64,7 @@
 
 .menu-link-item {
   width: max-content;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .menu-link-item-holder {

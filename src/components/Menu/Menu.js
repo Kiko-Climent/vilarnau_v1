@@ -9,9 +9,9 @@ import { useGSAP } from '@gsap/react';
 
 const menuLinks = [
   {path: '/', label: 'Home'},
+  {path: '/works', label: 'Works'},
   {path: '/prices', label: 'Prices'},
   {path: '/about', label: 'About'},
-  {path: '/contact', label: 'Contact'},
 ]
 
 const Menu = () => {
@@ -25,23 +25,31 @@ const Menu = () => {
   };
 
   useGSAP(() => {
-    gsap.set('.menu-link-item-holder', {y: 75});
-
-    tl.current = gsap.timeline({ paused: true})
-    .to('.menu-overlay', {
-      duration: 1.25,
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-      ease: 'power4.inOut',
-    })
-    .to('.menu-link-item-holder', {
-      y: 0,
-      duration: 0.1,
-      stagger: 0.1,
-      ease: 'power4.inOut',
-      delay: -0.75,
-    })
-  }, 
-  { scope: container });
+    gsap.set('.menu-link-item-holder', { y: 50, opacity: 0 });
+  
+    tl.current = gsap.timeline({ paused: true })
+      .to('.menu-overlay', {
+        duration: 1.2,
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        ease: 'expo.inOut',
+      })
+      .to('.menu-link-item-holder', {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power2.out',
+      }, '<0.3')
+      .fromTo('.menu-link-item-holder', {
+        rotationX: 15,
+      }, {
+        rotationX: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        stagger: 0.1,
+      }, '<'); // Sync with previous animation
+  }, { scope: container });
+  
 
   useEffect(() => {
     if (isMenuOpen) {

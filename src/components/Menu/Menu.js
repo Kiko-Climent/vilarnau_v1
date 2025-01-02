@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Calendar from '../Calendar/Calendar';
 
 const menuLinks = [
   {path: '/', label: 'Home'},
@@ -62,9 +63,12 @@ const Menu = () => {
   return(
     <div className="menu-container" ref={container}>
       <div className='menu-bar'>
-        <div className='menu-logo'>
-          <Link href="/">VILARNAU</Link>
+      <div className="menu-logo">
+        <Link href="/">VILARNAU</Link>
+        <div className="menu-calendar">
+          <Calendar />
         </div>
+      </div>
         <div className='menu-open' onClick={toggleMenu}>
           <p className=''>MENU</p>
         </div>
@@ -73,12 +77,15 @@ const Menu = () => {
         <div className='menu-overlay-bar'>
           <div className='menu-logo'>
             <Link href="/">VILARNAU</Link>
+            <div className="menu-calendar">
+          <Calendar />
+        </div>
           </div>
           <div className='menu-close' onClick={toggleMenu}>
             <p className=''>CLOSE</p>
           </div>
         </div>
-        <div className='menu-close-icon'>
+        <div className='menu-close-icon' onClick={toggleMenu}>
           <p className=''>&#x2715;</p>
         </div>
         <div className='menu-copy'>
@@ -94,13 +101,13 @@ const Menu = () => {
             ))}
           </div>
           <div className='menu-info'>
-          <div className='menu-info-col'>
+          {/* <div className='menu-info-col'>
             <a href='#'>X &#8599;</a>
             <a href='#'>Instagram &#8599;</a>
             <a href='#'>LinkedIn &#8599;</a>
             <a href='#'>Behance &#8599;</a>
             <a href='#'>Dribble &#8599;</a>
-          </div>
+          </div> */}
             <div className='menu-info-col'>
               <p>hello@vilarnau</p>
               <p>030-56789012</p>
@@ -108,7 +115,7 @@ const Menu = () => {
           </div>
         </div>
         <div className='menu-preview'>
-          <p>View Showreel</p>
+          <p>appointments &#8599;</p>
         </div>
       </div>
     </div>

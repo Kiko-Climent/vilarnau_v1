@@ -1,10 +1,9 @@
 'use client';
 
-
 import { useLayoutEffect, useState } from "react";
-
-// import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
+
+import Hero from "@/components/Hero";
 
 import Loader from "@/components/Loader";
 
@@ -12,25 +11,28 @@ import Loader from "@/components/Loader";
 
 export default function Home() {
 
-  // const [loaderFinished, setLoaderFinished] = useState(false);
-  // const [timeline, setTimeline] = useState(null);
+  const [loaderFinished, setLoaderFinished] = useState(false);
+  const [timeline, setTimeline] = useState(null);
 
-  // useLayoutEffect(() => {
-  //   const context = gsap.context(() => {
-  //     const tl = gsap.timeline({
-  //       onComplete: () => setLoaderFinished(true)
-  //     });
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const tl = gsap.timeline({
+        onComplete: () => setLoaderFinished(true)
+      });
 
-  //     setTimeline(tl);
-  //   })
+      setTimeline(tl);
+    })
 
-  //   return () => context.revert()
-  // }, [])
+    return () => context.revert()
+  }, [])
 
 
   return (
     <>
-      <Loader />
+      {/* {loaderFinished ? <Hero /> : <Loader timeline={timeline} />} */}
+      <Loader timeline={timeline} />
+      {/* <Hero />
+      <Loader /> */}
     </>
   );
 }

@@ -78,8 +78,8 @@ const Menu = () => {
           <div className='menu-logo'>
             <Link href="/">VILARNAU</Link>
             <div className="menu-calendar">
-          <Calendar />
-        </div>
+              <Calendar />
+            </div>
           </div>
           <div className='menu-close' onClick={toggleMenu}>
             <p className=''>CLOSE</p>
@@ -87,6 +87,7 @@ const Menu = () => {
         </div>
         <div className='menu-close-icon' onClick={toggleMenu}>
           <p className=''>&#x2715;</p>
+           {/* <p className=''><Calendar /></p> */}
         </div>
         <div className='menu-copy'>
           <div className='menu-links'>

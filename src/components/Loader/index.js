@@ -6,7 +6,7 @@ import { words } from './data'
 
 import styles from './Loader.module.scss'
 
-import { collapseWords, introAnimation, progressAnimation } from "./animations";
+import { collapseWords, introAnimation, progressAnimation, growProgressBar } from "./animations";
 
 const Loader = ({timeline}) => {
 
@@ -21,8 +21,11 @@ const Loader = ({timeline}) => {
     timeline
       .add(introAnimation(wordGroupsRef))
       .add(progressAnimation(progressRef, progressNumberRef), 0)
-      .add(collapseWords(loaderRef), '-=1');
+      .add(collapseWords(loaderRef), '-=1')
+      .add(growProgressBar(progressRef), '-=1');
   }, [timeline]);
+
+  
 
   return (
     <div className={styles.loader__wrapper}>

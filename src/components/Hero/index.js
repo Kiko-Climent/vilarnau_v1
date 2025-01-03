@@ -1,36 +1,48 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-
-import styles from "./Hero.module.scss";
+import { revealHero } from "./animations";
 
 const Hero = () => {
+  const progressRef = useRef(null);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    
+    if (progressRef.current) {
+      tl.add(revealHero(progressRef));
+    } else {
+      console.error("progressRef no está asignado correctamente.");
+    }
+
+    return () => tl.kill();
+  }, []);
+
   return (
-    <section className={styles.hero}>
-      {/* <div className={styles.hero__top}>
-        <div data-menu-item>
-          <Logo />
-        </div>
-        <span data-menu-item>about</span>
-        <span data-menu-item>contact</span>
-      </div> */}
+    <section className="relative w-screen h-screen">
+      <div
+        ref={progressRef}
+        className="absolute inset-0 bg-black z-50"
+        style={{
+          transformOrigin: "bottom center",
+        }}
+      ></div>
 
-      <h1 className={styles.hero__title}>
-        <span data-title-first>Vilarnau</span>
-        {/* <span data-hero-line className={styles.hero__line}></span> */}
-        {/* <span data-title-last>Kreuzberg</span> */}
-      </h1>
-
-      <div className={styles.hero__image}>
-        <div data-image-overlay className={styles.hero__imageOverlay}></div>
+      {/* Hero Img */}
+      <div ref={heroRef} className="relative overflow-hidden h-full">
         <img
-          data-image
-          src="/images/Vilarnau x Palma Llopis-9.jpg"
-          width={1728}
-          height={650}
-          alt="Blob"
-          style={{ objectFit: "cover" }}
+          src="/images/Vilarnau x Palma Llopis-18.jpg"
+          alt="Hero"
+          className="object-cover w-full h-full"
         />
+      </div>
+
+      <div className="absolute inset-0 flex items-center justify-center text-white uppercase">
+        <h1 className="text-7xl font-bold">Vilarnau.</h1>
       </div>
     </section>
   );

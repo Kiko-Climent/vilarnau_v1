@@ -50,3 +50,17 @@ export const collapseWords = (loaderRef) => {
 
   return tl;
 };
+
+export const growProgressBar = (progressRef) => {
+  const tl = gsap.timeline();
+
+  tl.to(progressRef.current, {
+    scaleY: 20,
+    transformOrigin: "bottom center",
+    duration: 3,
+    ease: "power3.inOut",
+  });
+
+  return tl;
+};
+

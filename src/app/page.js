@@ -29,10 +29,9 @@ export default function Home() {
 
   return (
     <>
-      {/* {loaderFinished ? <Hero /> : <Loader timeline={timeline} />} */}
-      <Loader timeline={timeline} />
-      {/* <Hero />
-      <Loader /> */}
+      {loaderFinished ? <Hero /> : <Loader timeline={timeline} />}
+      {/* <Loader timeline={timeline} /> */}
+      {/* <Hero /> */}
     </>
   );
 }

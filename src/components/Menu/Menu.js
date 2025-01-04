@@ -65,9 +65,9 @@ const Menu = () => {
       <div className='menu-bar'>
       <div className="menu-logo">
         <Link href="/">VILARNAU</Link>
-        <div className="menu-calendar">
+        {/* <div className="menu-calendar">
           <Calendar />
-        </div>
+        </div> */}
       </div>
         <div className='menu-open' onClick={toggleMenu}>
           <p className=''>MENU</p>

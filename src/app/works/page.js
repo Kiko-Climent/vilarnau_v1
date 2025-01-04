@@ -1,10 +1,12 @@
 'use client';
 
+import Intro from "@/components/Section_Intro";
+
 const page = () => {
   return (
-    <div className="page-content">
-      <h1 className="text-9xl">Works</h1>
-    </div>
+      <>
+      <Intro />
+      </>
   )
 }
 

@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import Hero from "@/components/Hero";
 
 import Loader from "@/components/Loader";
+import Intro from "@/components/Section_Intro";
 
 
 
@@ -32,6 +33,7 @@ export default function Home() {
       {loaderFinished ? <Hero /> : <Loader timeline={timeline} />}
       {/* <Loader timeline={timeline} /> */}
       {/* <Hero /> */}
+      {/* <Intro /> */}
     </>
   );
 }

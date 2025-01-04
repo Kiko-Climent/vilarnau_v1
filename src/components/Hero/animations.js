@@ -43,16 +43,38 @@ export const revealTextHero = (textRef) => {
 
   tl.fromTo(
     spans,
-    { y: 20, opacity: 0, rotationX: 15 },
+    { y: 15, opacity: 0, rotationX: 15 },
     {
       y: 0,
       opacity: 2,
       rotationX: 0,
-      duration: 1,
+      duration: 0.5,
       ease: "power2.out",
-      stagger: 0.15,
+      stagger: 0.03,
     }
   );
 
   return tl;
 }
+
+export const revealScrollHero = (textRef2) => {
+  const tl = gsap.timeline();
+
+  const p = textRef2.current.querySelectorAll("p");
+
+  tl.fromTo(
+    p,
+    { y: 15, opacity: 0, rotationX: 15 },
+    {
+      y: 0,
+      opacity: 2,
+      rotationX: 0,
+      duration: 0.5,
+      ease: "power2.out",
+      stagger: 0.03,
+    }
+  );
+
+  return tl;
+}
+

@@ -20,6 +20,8 @@ const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const tl = useRef();
+  const openRef = useRef();
+  const closeRef = useRef();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,6 +29,10 @@ const Menu = () => {
 
   useGSAP(() => {
     gsap.set('.menu-link-item-holder', { y: 50, opacity: 0 });
+    // gsap.set(openRef.current, { y: 0, opacity: 1 });
+    gsap.set(closeRef.current, { y: -50, opacity: 0 });
+    gsap.set(openRef.current, { scale: 1, opacity: 1 }); 
+    // gsap.set(closeRef.current, { scale: 0, opacity: 0 });
   
     tl.current = gsap.timeline({ paused: true })
       .to('.menu-overlay', {
@@ -48,7 +54,31 @@ const Menu = () => {
         duration: 0.8,
         ease: 'power2.out',
         stagger: 0.1,
-      }, '<'); // Sync with previous animation
+      }, '<') // Sync with previous animation
+      // .to(openRef.current, {
+      //   y: 50,
+      //   opacity: 0,
+      //   duration: 0.5,
+      //   ease: 'power2.out',
+      // }, '<')
+      .to(closeRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+      }, '<')
+      .to(openRef.current, {
+        scale: 0, 
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+      }, '<')
+      // .to(closeRef.current, {
+      //   scale: 1, 
+      //   opacity: 1,
+      //   duration: 0.3,
+      //   ease: 'power2.out',
+      // }, '+=0.2');
   }, { scope: container });
   
 
@@ -69,7 +99,7 @@ const Menu = () => {
           <Calendar />
         </div> */}
       </div>
-        <div className='menu-open' onClick={toggleMenu}>
+        <div ref={openRef} className='menu-open' onClick={toggleMenu}>
           <p className=''>MENU</p>
         </div>
       </div>
@@ -81,7 +111,7 @@ const Menu = () => {
               <Calendar />
             </div>
           </div>
-          <div className='menu-close' onClick={toggleMenu}>
+          <div ref={closeRef} className='menu-close' onClick={toggleMenu}>
             <p className=''>CLOSE</p>
           </div>
         </div>

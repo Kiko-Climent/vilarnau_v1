@@ -18,11 +18,13 @@ const Intro = () => {
             alt="Imagen 2"
           />
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-3xl text-center text-white font-bold blur-[0.5px]">a place where individuality <br/>its not only welcome but celebrate</p>
+          <p className="text-xl md:text-4xl text-center text-white font-bold blur-[0.5px]">
+            a space where individuality<br/> and self-expression <br/>are not just embraced <br/>but celebrate</p>
         </div>
         </div>
       </div>
     </section>
+    
   );
 };
 

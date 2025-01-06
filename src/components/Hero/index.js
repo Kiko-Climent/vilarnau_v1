@@ -49,7 +49,7 @@ const Hero = () => {
       </div>
 
       <div ref={textRef} className="absolute inset-0 flex items-center justify-center text-white uppercase">
-        <h1 className="text-5xl md:text-7xl font-bold blur-[0.5px]">
+        <h1 className="text-5xl md:text-7xl font-bold blur-[0.5px] opacity-60">
           {"VILARNAU".split("").map((letter, index) => (
             <span key={index} className="inline-block">
               {letter}

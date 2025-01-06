@@ -37,7 +37,8 @@ html {
 }
 
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
+  --background: #f7f6ee;
   --foreground: #171717;
 }
 
@@ -52,12 +53,15 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Neue Montreal", sans-serif;
+  
+  
 }
 
 a, p {

@@ -2,7 +2,7 @@
 
 const Intro = () => {
   return (
-    <section className="h-screen w-screen">
+    <section className="h-full w-screen overflow-hidden ">
       <div className="flex flex-col md:flex-row h-full w-full gap-16 px-8 pt-16">
         <div className="flex w-full h-full">
           <img

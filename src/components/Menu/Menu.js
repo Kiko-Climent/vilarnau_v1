@@ -91,20 +91,17 @@ const Menu = () => {
   }, [isMenuOpen])
 
   return(
-    <div className="menu-container" ref={container}>
-      <div className='menu-bar'>
+    <div className="menu-container w-screen" ref={container}>
+      <div className='menu-bar w-full px-8 py-5 bg-white'>
       <div className="menu-logo">
         <Link href="/">VILARNAU</Link>
-        {/* <div className="menu-calendar">
-          <Calendar />
-        </div> */}
       </div>
         <div ref={openRef} className='menu-open' onClick={toggleMenu}>
-          <p className=''>MENU</p>
+          <p>MENU</p>
         </div>
       </div>
-      <div className='menu-overlay'>
-        <div className='menu-overlay-bar'>
+      <div className='menu-overlay w-screen'>
+        <div className='menu-overlay-bar w-full px-8 py-5'>
           <div className='menu-logo'>
             <Link href="/">VILARNAU</Link>
             <div className="menu-calendar">
@@ -117,7 +114,6 @@ const Menu = () => {
         </div>
         <div className='menu-close-icon' onClick={toggleMenu}>
           <p className=''>&#x2715;</p>
-           {/* <p className=''><Calendar /></p> */}
         </div>
         <div className='menu-copy'>
           <div className='menu-links'>

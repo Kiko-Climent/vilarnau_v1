@@ -37,8 +37,8 @@ html {
 }
 
 :root {
-  /* --background: #ffffff; */
-  --background: #f7f6ee;
+  --background: #ffffff;
+  /* --background: #f7f6ee; */
   --foreground: #171717;
 }
 
@@ -64,7 +64,13 @@ body {
   
 }
 
-a, p {
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* a, p {
   color: #000;
   text-decoration: none;
   text-transform: uppercase;
@@ -97,7 +103,8 @@ h1 sup {
   left: 10px;
   font-size: 1.5vw;
   letter-spacing: 0;
-}
+} */
+
 
 @media(max-width: 900px) {
   .page-content h1 {

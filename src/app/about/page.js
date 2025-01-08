@@ -1,10 +1,12 @@
 'use client';
 
+import About from "@/components/Section_About";
+
 const page = () => {
   return (
-    <div className="page-content">
-      <h1 className="text-9xl">About</h1>
-    </div>
+    <main>
+      <About />
+    </main>
   )
 }
 

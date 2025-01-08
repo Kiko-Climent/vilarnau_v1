@@ -6,7 +6,9 @@ import { gsap } from "gsap";
 import Hero from "@/components/Hero";
 
 import Loader from "@/components/Loader";
-import Intro from "@/components/Section_Intro";
+// import Intro from "@/components/Section_Intro";
+// import Intro2 from "@/components/Section_Intro2";
+// import Appointments from "@/components/Section_Appointments";
 
 
 
@@ -29,6 +31,21 @@ export default function Home() {
 
 
   return (
+    // <>
+    //   {loaderFinished ? <Hero /> : <Loader timeline={timeline} />}
+    //   {/* <Loader timeline={timeline} /> */}
+    //   {/* <Hero /> */}
+    //   {/* <Intro /> */}
+    //   {loaderFinished && (
+    //   <>
+    //   <Intro />
+    //   <div className="pt-16 md:pt-28">
+    //     <Intro2 />
+    //   </div>
+    //     <Appointments />
+    //   </>
+    //   )}
+    // </>
     <>
       {loaderFinished ? <Hero /> : <Loader timeline={timeline} />}
       {/* <Loader timeline={timeline} /> */}

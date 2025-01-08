@@ -1,10 +1,15 @@
 'use client';
 
+import Info from "@/components/Section_Info";
+import Description from "@/components/Section_Info/description";
+
 const page = () => {
   return (
-    <div className="page-content">
-      <h1 className="text-9xl">Prices</h1>
-    </div>
+    <main className="relative h-[200vh]">
+      <Info />
+      <Description />
+      
+    </main>
   )
 }
 

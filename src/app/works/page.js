@@ -30,8 +30,8 @@ const page = () => {
           <Intro2 />
         </div>
         <Info />
-        <Description />
-        <Appointments /> */}
+        <Description />*/}
+        <Appointments />
       </main>
   )
 }

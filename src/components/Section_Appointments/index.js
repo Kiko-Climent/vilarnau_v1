@@ -28,7 +28,7 @@
 const Appointments = () => {
   return(
     <section className="h-screen px-8 py-16">
-      <div className="flex flex-row h-full overflow-hidden items-center justify-center gap-8">
+      <div className="flex flex-row h-full overflow-y-hidden items-center justify-center gap-2 md:gap-8">
         <div className="flex w-1/3 h-full">
           <img src="./images/Vilarnau x Palma Llopis-11.jpg" className="object-cover w-full"/>
         </div>

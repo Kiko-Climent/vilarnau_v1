@@ -40,7 +40,7 @@ const Intro = () => {
         <div className="w-full w-full md:w-6/12 relative"> 
           <img src='./images/Vilarnau x Palma Llopis-7.jpg'  className="w-full object-cover" />
           <div className="absolute h-full inset-0 flex items-center justify-center">
-            <p className="text-xl md:text-4xl text-center text-white font-bold blur-[0.5px]">
+            <p className="text-xl md:text-4xl text-center text-white font-bold blur-[0.5px] opacity-70">
               a space where individuality<br/> and self-expression <br/>are not just embraced <br/>but celebrate
             </p>
          </div>

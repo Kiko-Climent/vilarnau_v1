@@ -4,11 +4,12 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 
 import Appointments from "@/components/Section_Appointments";
-import Info from "@/components/Section_Info";
+import Info from "@/components/Section_Prices";
 import Intro from "@/components/Section_Intro";
-import Description from "@/components/Section_Info/description";
+import Description from "@/components/Section_Prices/description";
 import Intro2 from "@/components/Section_Intro2";
 import Intro2_2 from "@/components/Section_Intro2/index2";
+import Partner from "@/components/Section_Partner";
 
 const page = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const page = () => {
         <Info />
         <Description />*/}
         <Appointments />
+        <Partner />
       </main>
   )
 }

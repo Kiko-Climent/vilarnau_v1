@@ -4,6 +4,7 @@ import "./globals.css";
 // import Navbar2 from "@/components/Navbar/Navbar2";
 import Menu from "@/components/Menu/Menu";
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,7 +28,6 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Menu />
-        
         {children}
       </body>
     </html>

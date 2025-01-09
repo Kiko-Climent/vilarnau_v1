@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Neue Montreal"', 'sans-serif'],
+        sans: ['Neue Montreal', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",

@@ -3,6 +3,7 @@ import "./globals.css";
 // import Navbar from "@/components/Navbar/Navbar";
 // import Navbar2 from "@/components/Navbar/Navbar2";
 import Menu from "@/components/Menu/Menu";
+import Footer from "@/components/Footer/Footer";
 
 
 const geistSans = localFont({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Menu />
+        {/* <Footer /> */}
         {children}
       </body>
     </html>

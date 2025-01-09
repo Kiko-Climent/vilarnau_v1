@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Calendar from '../Calendar/Calendar';
+import Clock from '../Calendar/Clock';
 
 const menuLinks = [
   {path: '/', label: 'Home'},
@@ -29,6 +30,7 @@ const Menu = () => {
 
   useGSAP(() => {
     gsap.set('.menu-link-item-holder', { y: 50, opacity: 0 });
+    gsap.set('.menu-calendar', { y: 50, opacity: 0 });
     // gsap.set(openRef.current, { y: 0, opacity: 1 });
     gsap.set(closeRef.current, { y: -50, opacity: 0 });
     gsap.set(openRef.current, { scale: 1, opacity: 1 }); 
@@ -55,6 +57,23 @@ const Menu = () => {
         ease: 'power2.out',
         stagger: 0.1,
       }, '<') // Sync with previous animation
+      .to('.menu-calendar', {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power2.out',
+      }, '<0.3')
+      .fromTo('.menu-calendar', {
+        rotationX: 15,
+      }, {
+        rotationX: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        stagger: 0.1,
+      }, '<') 
+
+
       // .to(openRef.current, {
       //   y: 50,
       //   opacity: 0,
@@ -104,7 +123,7 @@ const Menu = () => {
         <div className='menu-overlay-bar w-full px-8 py-5'>
           <div className='menu-logo'>
             <Link href="/">VILARNAU</Link>
-            <div className="menu-calendar">
+            <div className="menu-calendar text-gray-400">
               <Calendar />
             </div>
           </div>
@@ -127,22 +146,20 @@ const Menu = () => {
               </div>
             ))}
           </div>
+          <div className='menu-clock flex flex-col text-gray-400'>
+            <div className='flex uppercase'>berlin</div>
+            <div className='flex'><Clock/></div>
+          </div>
           <div className='menu-info'>
-          {/* <div className='menu-info-col'>
-            <a href='#'>X &#8599;</a>
-            <a href='#'>Instagram &#8599;</a>
-            <a href='#'>LinkedIn &#8599;</a>
-            <a href='#'>Behance &#8599;</a>
-            <a href='#'>Dribble &#8599;</a>
-          </div> */}
             <div className='menu-info-col'>
-              <p>hello@vilarnau</p>
-              <p>030-56789012</p>
+              <p>appointments &#8599;</p>
+              <p>hello@vilarnau.de</p>
+              <p>030 - 61202363</p>
             </div>
           </div>
         </div>
-        <div className='menu-preview'>
-          <p>appointments &#8599;</p>
+        <div className='menu-preview pr-0 md:pr-8'>
+          <p>manteufelstr.55</p>
         </div>
       </div>
     </div>

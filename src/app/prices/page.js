@@ -1,5 +1,6 @@
 'use client';
 
+import Footer from "@/components/Footer/Footer";
 import Prices from "@/components/Section_Prices";
 import Description from "@/components/Section_Prices/description";
 import { useScroll } from "framer-motion";
@@ -31,6 +32,7 @@ const page = () => {
     <main ref={container} className="relative h-[200vh]">
       <Prices scrollYProgress={scrollYProgress} />
       <Description scrollYProgress={scrollYProgress} />
+      <Footer />
       
     </main>
   )

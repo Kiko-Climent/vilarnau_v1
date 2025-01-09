@@ -70,6 +70,10 @@ img {
   max-width: 100%;
 }
 
+.container-info {
+  line-height: 0.75;
+}
+
 /* a, p {
   color: #000;
   text-decoration: none;

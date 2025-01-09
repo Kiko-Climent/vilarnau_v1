@@ -37,10 +37,10 @@ const Nav = () => {
               <h3 className='text-3xl mb-2 uppercase text-white'>Manteufelstr. 55 | 10999 | Berlin-Kreuzberg</h3>
           </div>
           <div className='flex flex-col gap-1'>
-              <h3 className='text-3xl mb-2 uppercase text-white'>#030-117788167</h3>
+              <h3 className='text-3xl mb-2 uppercase text-white'>030 - 61202363</h3>
           </div>
           <div className='flex flex-col gap-1'>
-              <h3 className='text-3xl mb-2 text-white'>hello@vilarnau.com</h3>
+              <h3 className='text-3xl mb-2 text-white'>hello@vilarnau.de</h3>
           </div>
       </div>
   )

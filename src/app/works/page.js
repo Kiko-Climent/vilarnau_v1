@@ -8,6 +8,7 @@ import Intro from "@/components/Section_Intro";
 import Intro2_2 from "@/components/Section_Intro2/index2";
 import Partner from "@/components/Section_Partner";
 import Footer from "@/components/Footer/Footer";
+import Info from "@/components/Section_Info";
 
 const page = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const page = () => {
         <Intro />
         <Intro2_2 />
         <Appointments />
+        <Info />
         {/* <Partner /> */}
         <Footer />
       </main>

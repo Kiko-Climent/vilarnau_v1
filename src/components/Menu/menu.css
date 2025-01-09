@@ -49,6 +49,16 @@
   left: 0;
 }
 
+.menu-clock {
+  font-size: 10vw;
+  line-height: 0.8;
+}
+
+.menu-clock > div {
+  margin: 0; /* Asegúrate de que no haya márgenes adicionales entre los elementos */
+}
+
+
 .menu-bar a, .menu-open p {
   color: black;
   cursor: pointer;
@@ -97,6 +107,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+
 }
 
 .menu-close-icon p {

@@ -23,6 +23,7 @@ const Menu = () => {
   const tl = useRef();
   const openRef = useRef();
   const closeRef = useRef();
+  const clockInRef = useRef();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,10 +32,12 @@ const Menu = () => {
   useGSAP(() => {
     gsap.set('.menu-link-item-holder', { y: 50, opacity: 0 });
     gsap.set('.menu-calendar', { y: 50, opacity: 0 });
-    // gsap.set(openRef.current, { y: 0, opacity: 1 });
+
     gsap.set(closeRef.current, { y: -50, opacity: 0 });
     gsap.set(openRef.current, { scale: 1, opacity: 1 }); 
-    // gsap.set(closeRef.current, { scale: 0, opacity: 0 });
+
+    gsap.set(clockInRef.current, {y: -50, opacity: 0});
+    
   
     tl.current = gsap.timeline({ paused: true })
       .to('.menu-overlay', {
@@ -73,13 +76,6 @@ const Menu = () => {
         stagger: 0.1,
       }, '<') 
 
-
-      // .to(openRef.current, {
-      //   y: 50,
-      //   opacity: 0,
-      //   duration: 0.5,
-      //   ease: 'power2.out',
-      // }, '<')
       .to(closeRef.current, {
         y: 0,
         opacity: 1,
@@ -92,12 +88,13 @@ const Menu = () => {
         duration: 0.3,
         ease: 'power2.out',
       }, '<')
-      // .to(closeRef.current, {
-      //   scale: 1, 
-      //   opacity: 1,
-      //   duration: 0.3,
-      //   ease: 'power2.out',
-      // }, '+=0.2');
+
+      .to(clockInRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+      }, '<1')
   }, { scope: container });
   
 
@@ -113,10 +110,10 @@ const Menu = () => {
     <div className="menu-container w-screen" ref={container}>
       <div className='menu-bar w-full px-8 py-5 bg-white'>
       <div className="menu-logo">
-        <Link href="/">VILARNAU</Link>
+        <Link href="/" className='hover:text-gray-400 transition-colors duration-300'>VILARNAU</Link>
       </div>
         <div ref={openRef} className='menu-open' onClick={toggleMenu}>
-          <p>MENU</p>
+          <p className='hover:text-gray-400 transition-colors duration-300'>MENU</p>
         </div>
       </div>
       <div className='menu-overlay w-screen'>
@@ -128,7 +125,7 @@ const Menu = () => {
             </div>
           </div>
           <div ref={closeRef} className='menu-close' onClick={toggleMenu}>
-            <p className=''>CLOSE</p>
+            <p className='hover:text-gray-400 transition-colors duration-300'>CLOSE</p>
           </div>
         </div>
         <div className='menu-close-icon' onClick={toggleMenu}>
@@ -139,16 +136,16 @@ const Menu = () => {
             {menuLinks.map((link, index) => (
               <div className='menu-link-item' key={index}>
                 <div className='menu-link-item-holder' onClick={toggleMenu}>
-                  <Link href={link.path} className='menu-link'>
+                  <Link href={link.path} className='menu-link hover:text-gray-400 transition-colors duration-300'>
                     {link.label}
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-          <div className='menu-clock flex flex-col text-gray-400'>
-            <div className='flex uppercase'>berlin</div>
-            <div className='flex'><Clock/></div>
+          <div ref={clockInRef} className='menu-clock text-gray-400'>
+            <div className='uppercase'>berlin</div>
+            <div className=''><Clock/></div>
           </div>
           <div className='menu-info'>
             <div className='menu-info-col'>

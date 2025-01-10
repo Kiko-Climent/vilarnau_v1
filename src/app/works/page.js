@@ -25,8 +25,8 @@ const page = () => {
       <main>
         <Intro />
         <Intro2_2 />
-        <Appointments />
         <Info />
+        <Appointments />
         {/* <Partner /> */}
         <Footer />
       </main>

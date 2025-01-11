@@ -39,7 +39,7 @@ const Hero = () => {
       ></div>
 
       {/* Hero Img */}
-      <div ref={heroRef} className="relative overflow-hidden h-full flex justify-center place-items-center py-16 px-6 ">
+      <div ref={heroRef} className="relative overflow-hidden h-full flex justify-center place-items-center py-16 px-8 ">
         <img
           src="/images/Vilarnau x Palma Llopis-18.jpg"
           alt="Hero"

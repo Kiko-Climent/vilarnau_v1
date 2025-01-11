@@ -1,20 +1,23 @@
 "use client";
 
-const About = () => {
+import React from "react";
+import { motion, useTransform } from "framer-motion";
+
+const About = ({scrollYProgress}) => {
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8])
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5])
+
   return(
-    <section className="bg-orange-600">
-      <div className="h-screen border-8 border-white grid grid-cols-[400px_500px_150px_] grid-rows-[150px_300px_200px_] gap-x-2 gap-y-4 justify-center place-content-evenly">
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl self-start">ITEM 1</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-7xl self-end"></div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl self-center">ITEM 3</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl">ITEM 4</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl">ITEM 5</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl">ITEM 6</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl">ITEM 7</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl">ITEM 8</div>
-        <div className="bg-orange-500 text-white px-8 py-6 text-2xl">ITEM 9</div>
+    <motion.div style={{scale, rotate}} className="sticky top-0 h-screen bg-[white] text-[3.5vw] flex flex-col items-center justify-center text-white pb-[10vh]">
+      <div className="relative flex">
+        {/* play around with pic either h-screen/h-full */}
+        <img src="/images/Vilarnau x Palma Llopis-17.jpg"
+            className="relative flex px-8 object-cover h-screen"/>
+          <p className="absolute flex text-5xl md:text-7xl font-bold text-white inset-0 items-center justify-center blur-[0.5px] opacity-70">about</p>
+          <p className="text-sm md:text-lg font-bold text-gray-400 md:text-white absolute flex inset-0 items-end justify-center pb-8">scroll down ↓</p>
       </div>
-    </section>
+    </motion.div>
   )
 }
 

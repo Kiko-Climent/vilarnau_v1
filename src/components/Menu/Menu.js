@@ -24,6 +24,7 @@ const Menu = () => {
   const openRef = useRef();
   const closeRef = useRef();
   const clockInRef = useRef();
+  const cityInRef = useRef();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -37,6 +38,7 @@ const Menu = () => {
     gsap.set(openRef.current, { scale: 1, opacity: 1 }); 
 
     gsap.set(clockInRef.current, {y: -50, opacity: 0});
+    gsap.set(cityInRef.current, {y: -50, opacity: 0});
     
   
     tl.current = gsap.timeline({ paused: true })
@@ -89,12 +91,19 @@ const Menu = () => {
         ease: 'power2.out',
       }, '<')
 
+      .to(cityInRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power2.out',
+      }, '<0.7')
       .to(clockInRef.current, {
         y: 0,
         opacity: 1,
-        duration: 0.5,
+        duration: 0.4,
         ease: 'power2.out',
-      }, '<1')
+      }, '<0.7')
+
   }, { scope: container });
   
 
@@ -143,9 +152,9 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <div ref={clockInRef} className='menu-clock text-gray-400'>
-            <div className='uppercase'>berlin</div>
-            <div className=''><Clock/></div>
+          <div className='menu-clock text-gray-400'>
+            <div ref={cityInRef} className='uppercase'>berlin</div>
+            <div ref={clockInRef} className=''><Clock/></div>
           </div>
           <div className='menu-info'>
             <div className='menu-info-col'>

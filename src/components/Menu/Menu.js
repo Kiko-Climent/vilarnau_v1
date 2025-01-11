@@ -10,7 +10,7 @@ import Calendar from '../Calendar/Calendar';
 import Clock from '../Calendar/Clock';
 
 const menuLinks = [
-  {path: '/', label: 'Home'},
+  {path: '/home', label: 'Home'},
   {path: '/works', label: 'Works'},
   {path: '/prices', label: 'Prices'},
   {path: '/about', label: 'About'},

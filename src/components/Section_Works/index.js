@@ -12,8 +12,8 @@ const Works = ({scrollYProgress}) => {
     <motion.div style={{scale, rotate}} className="sticky top-0 h-screen bg-[white] text-[3.5vw] flex flex-col items-center justify-center text-white pb-[10vh]">
       <div className="relative flex items-center justify-center">
         {/* play around with pic either h-screen/h-full */}
-        <img src="/images/Vilarnau x Palma Llopis-12.jpg"
-            className="relative flex px-8 object-contain h-screen"/>
+        <img src="/images/Vilarnau_analog_04.jpg"
+            className="relative flex px-8 object-cover h-screen"/>
           <p className="absolute flex text-5xl md:text-7xl font-bold text-white inset-0 items-center justify-center blur-[0.5px] opacity-70">works</p>
           <p className="text-sm md:text-lg font-bold text-gray-400 md:text-white absolute flex inset-0 items-end justify-center pb-8">scroll down ↓</p>
       </div>

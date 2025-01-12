@@ -51,7 +51,7 @@
 }
 
 .menu-clock {
-  font-size: 10vw;
+  /* font-size: 10vw; */
   line-height: 0.8;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .menu-preview {
-  flex: 4;
+  /* flex: 4; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;

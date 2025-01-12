@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import './menu.css';
 import Link from 'next/link';
 
@@ -17,6 +18,8 @@ const menuLinks = [
 ]
 
 const Menu = () => {
+  const pathname = usePathname()
+
   const container = useRef()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -29,6 +32,11 @@ const Menu = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  if (pathname === "/") {
+    return null;
+  }
+
 
   useGSAP(() => {
     gsap.set('.menu-link-item-holder', { y: 50, opacity: 0 });
@@ -152,7 +160,7 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <div className='menu-clock text-gray-400'>
+          <div className='menu-clock text-[12vw] md:text-[10vw] text-gray-400'>
             <div ref={cityInRef} className='uppercase'>berlin</div>
             <div ref={clockInRef} className=''><Clock/></div>
           </div>

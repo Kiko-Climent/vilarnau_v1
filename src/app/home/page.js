@@ -9,6 +9,7 @@ import Intro2_2 from "@/components/Section_Intro2/index2";
 import Partner from "@/components/Section_Partner";
 import Footer from "@/components/Footer/Footer";
 import Info from "@/components/Section_Info";
+import Svg from "@/components/svg/svg";
 
 const page = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ const page = () => {
         <Intro2_2 />
         <Info />
         <Appointments />
+        {/* <Svg /> */}
         {/* <Partner /> */}
         <Footer />
       </main>

@@ -11,6 +11,8 @@ import Footer from "@/components/Footer/Footer";
 import Info from "@/components/Section_Info";
 import Svg from "@/components/svg/svg";
 import Intro2 from "@/components/Section_Intro2";
+import Pedro from "@/components/Section_Pedro";
+
 
 const page = () => {
   useEffect(() => {
@@ -30,6 +32,7 @@ const page = () => {
         <Intro2 />
         <Info />
         <Appointments />
+        <Pedro />
         {/* <Svg /> */}
         {/* <Partner /> */}
         <Footer />

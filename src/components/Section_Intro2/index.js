@@ -71,7 +71,7 @@ const Intro2 = () => {
       >
         {/* Contenedor del texto */}
         <div className="flex w-full md:w-6/12">
-          <div className="w-full text-right md:text-left text-3xl md:text-5xl font-bold text-gray-400">
+          <div className="w-full text-right md:text-left text-3xl md:text-5xl font-bold text-gray-700">
             {splitLines(lines)}
           </div>
         </div>

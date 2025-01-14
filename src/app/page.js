@@ -34,6 +34,7 @@ export default function Home() {
     
     <>
       {loaderFinished ? <Hero /> : <Loader timeline={timeline} />}
+      {/* <Hero /> */}
     </>
   );
 }

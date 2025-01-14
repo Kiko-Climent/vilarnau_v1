@@ -127,7 +127,7 @@ const Menu = () => {
     <div className="menu-container w-screen" ref={container}>
       <div className='menu-bar w-full px-8 py-5 bg-white'>
       <div className="menu-logo">
-        <Link href="/" className='hover:text-gray-400 transition-colors duration-300'>VILARNAU</Link>
+        <Link href="/home" className='hover:text-gray-400 transition-colors duration-300'>VILARNAU</Link>
       </div>
         <div ref={openRef} className='menu-open' onClick={toggleMenu}>
           <p className='hover:text-gray-400 transition-colors duration-300'>MENU</p>
@@ -153,7 +153,7 @@ const Menu = () => {
             {menuLinks.map((link, index) => (
               <div className='menu-link-item' key={index}>
                 <div className='menu-link-item-holder' onClick={toggleMenu}>
-                  <Link href={link.path} className='menu-link hover:text-gray-400 transition-colors duration-300'>
+                  <Link href={link.path} className='pl-0 md:pl-5 menu-link hover:text-gray-400 transition-colors duration-300'>
                     {link.label}
                   </Link>
                 </div>

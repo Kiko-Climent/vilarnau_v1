@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
-// import Navbar from "@/components/Navbar/Navbar";
-// import Navbar2 from "@/components/Navbar/Navbar2";
+
 import Menu from "@/components/Menu/Menu";
+import PageTransition from "@/components/Page_Transitions/PageTransitions";
 
 
 const geistSans = localFont({
@@ -29,7 +29,9 @@ export default function RootLayout({ children }) {
       >
         <Menu />
         {/* <Footer /> */}
+        <PageTransition>
         {children}
+        </PageTransition>
       </body>
     </html>
   );

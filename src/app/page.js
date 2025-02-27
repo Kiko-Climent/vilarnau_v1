@@ -1,6 +1,7 @@
 'use client';
 
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { gsap } from "gsap";
 
 import Hero from "@/components/Hero";
@@ -16,6 +17,7 @@ export default function Home() {
 
   const [loaderFinished, setLoaderFinished] = useState(false);
   const [timeline, setTimeline] = useState(null);
+  const router = useRouter();
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -28,6 +30,20 @@ export default function Home() {
 
     return () => context.revert()
   }, [])
+
+  useEffect(() => {
+    if (loaderFinished) {
+      const handleInteraction = () => router.push("/home")
+
+      document.addEventListener("click", handleInteraction);
+      document.addEventListener("keydown", handleInteraction);
+
+      return () => {
+        document.removeEventListener("click", handleInteraction);
+        document.removeEventListener("keydown", handleInteraction);
+      }
+    }
+  },[loaderFinished, router])
 
 
   return (

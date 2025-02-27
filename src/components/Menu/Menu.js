@@ -33,9 +33,7 @@ const Menu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  if (pathname === "/") {
-    return null;
-  }
+  
 
 
   useGSAP(() => {
@@ -124,7 +122,7 @@ const Menu = () => {
   }, [isMenuOpen])
 
   return(
-    <div className="menu-container w-screen" ref={container}>
+    <div className="menu-container w-screen" ref={container} style={{ display: pathname === "/" ? "none" : "block" }}>
       <div className='menu-bar w-full px-8 py-5 bg-white'>
       <div className="menu-logo">
         <Link href="/home" className='hover:text-gray-400 transition-colors duration-300'>VILARNAU</Link>

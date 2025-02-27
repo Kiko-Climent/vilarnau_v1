@@ -1,4 +1,4 @@
-const Intro3 = () => {
+const Intro1_2 = () => {
   return (
     <section className="w-full h-full px-8 py-16">
       <div className="flex flex-col md:flex-row gap-8 h-full ">
@@ -18,4 +18,4 @@ const Intro3 = () => {
   );
 }
 
-export default Intro3;
+export default Intro1_2;

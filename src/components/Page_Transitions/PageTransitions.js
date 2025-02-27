@@ -13,7 +13,10 @@ const PageTransition = ({ children }) => {
         initial={{ opacity: 0, filter: "blur-[20px]" }}
         animate={{ opacity: 1,  filter: "blur-[0px]" }}
         exit={{ opacity: 0, filter: "blur-[20px]"}}
-        transition={{ duration: 0.7, ease: "easeInOut", delay: 0.7 }}
+        transition={{ duration: 0.9, ease: "easeInOut", delay: 0.7 }}
+        onAnimationComplete={() => {
+          window.dispatchEvent(new Event("pageTransitionComplete"));
+        }}
       >
         {children}
       </motion.div>

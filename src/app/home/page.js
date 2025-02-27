@@ -9,9 +9,10 @@ import Intro2_2 from "@/components/Section_Intro2/index2";
 import Partner from "@/components/Section_Partner";
 import Footer from "@/components/Footer/Footer";
 import Info from "@/components/Section_Info";
-import Svg from "@/components/svg/svg";
 import Intro2 from "@/components/Section_Intro2";
 import Pedro from "@/components/Section_Pedro";
+import Intro1_3 from "@/components/Section_Intro/index.3";
+import Intro2_3 from "@/components/Section_Intro2/index3";
 
 
 const page = () => {
@@ -27,9 +28,9 @@ const page = () => {
   }, [])
   return (
       <main>
-        <Intro />
+        <Intro1_3 />
         {/* <Intro2_2 /> */}
-        <Intro2 />
+        <Intro2_3 />
         <Info />
         <Appointments />
         <Pedro />

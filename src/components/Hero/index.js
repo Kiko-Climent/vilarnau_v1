@@ -58,7 +58,7 @@ const Hero = () => {
         </h1>
       </div>
       <div ref={textRef2}>
-        <p className="text-sm md:text-lg font-bold text-white absolute flex inset-0 items-end justify-center pb-32">scroll down ↓</p>
+        <p className="cursor-pointer text-sm md:text-lg font-bold text-white absolute flex inset-0 items-end justify-center pb-32">tab here ●</p>
       </div>
     </section>
   );
